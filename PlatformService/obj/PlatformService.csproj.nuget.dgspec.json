@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SoftWorkBox\\PlatformService\\PlatformService.csproj": {}
+    "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj": {}
   },
   "projects": {
-    "C:\\SoftWorkBox\\PlatformService\\PlatformService.csproj": {
+    "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SoftWorkBox\\PlatformService\\PlatformService.csproj",
+        "projectUniqueName": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "C:\\SoftWorkBox\\PlatformService\\PlatformService.csproj",
+        "projectPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\akinw\\.nuget\\packages\\",
-        "outputPath": "C:\\SoftWorkBox\\PlatformService\\obj\\",
+        "outputPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -44,6 +44,28 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

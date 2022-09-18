@@ -1,5 +1,7 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
+using PlatformService.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,14 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseInMemoryDatabase("InMem"));
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddControllers();
+// Auto Mapper Configurations
+    //  var mapperConfig = new MapperConfiguration(mc =>
+    //  {
+    //      mc.AddProfile(new PlatformProfile());
+    //  });
+
+    //  IMapper mapper = mapperConfig.CreateMapper();
+    //  builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

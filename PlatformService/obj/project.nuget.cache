@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3gJ6+lIWF4Jt29vCTdF01CMVy6Ap5cUz9u/ZAV/Qyuep+AObU61dr3B1vV9lCx8icVTf4rx731HY2N5i0Ketag==",
+  "dgSpecHash": "bGANVT2SyRXjdlNabquzZPxnH1e6NZNNU2l2yy+0P1wnDkfUvsJq8uSgcFASF28zETxkL9c+RYiaNR7xclAc2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\PlatformService.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\akinw\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\akinw\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\akinw\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\akinw\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\akinw\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

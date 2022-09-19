@@ -11,13 +11,12 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddControllers();
 // Auto Mapper Configurations
-    //  var mapperConfig = new MapperConfiguration(mc =>
-    //  {
-    //      mc.AddProfile(new PlatformProfile());
-    //  });
-
-    //  IMapper mapper = mapperConfig.CreateMapper();
-    //  builder.Services.AddSingleton(mapper);
+// var config = new MapperConfiguration(cfg => 
+// {
+//     cfg.AddProfile(new PlatformProfile());
+// });
+// var mapper = config.CreateMapper();
+// builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

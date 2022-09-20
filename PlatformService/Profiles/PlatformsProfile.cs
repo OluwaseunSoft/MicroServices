@@ -6,7 +6,7 @@ namespace PlatformService.Profiles
 {
     public class PlatformProfile : Profile
     {
-        public void PlatformsProfile()
+        public PlatformProfile()
         {
             //source ==> target
             CreateMap<Platform, PlatformReadDto>();

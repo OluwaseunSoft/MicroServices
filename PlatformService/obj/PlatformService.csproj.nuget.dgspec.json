@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj": {}
+    "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\PlatformService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj": {
+    "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj",
+        "projectUniqueName": "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\PlatformService.csproj",
+        "projectPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\akinw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\platformservice\\obj\\",
+        "outputPath": "C:\\Users\\akinw\\source\\repos\\MicroServices\\PlatformService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

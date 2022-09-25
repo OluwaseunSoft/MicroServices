@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: platforms-depl
-specs:
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -11,3 +11,7 @@ specs:
     metadata:
       labels:
         app: platformservice
+    spec: 
+      containers:
+        - name: platformservice
+          image: therealseunsoft/platformservice:latest

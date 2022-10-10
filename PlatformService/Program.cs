@@ -5,10 +5,14 @@ using PlatformService.Profiles;
 using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
-
+IWebHostEnvironment environment = builder.Environment;
 // Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("InMem"));
+// System.Console.WriteLine("--> Using InMem DB");
+// builder.Services.AddDbContext<AppDbContext>(opt => 
+//     opt.UseInMemoryDatabase("InMem"));
+System.Console.WriteLine("--> Using SqlServer DB");
+builder.Services.AddDbContext<AppDbContext>(opt =>
+opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();
@@ -27,6 +31,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+}
+
+if(environment.IsProduction())
+{
+
+}
+else
+{
+
 }
 
 app.UseHttpsRedirection();

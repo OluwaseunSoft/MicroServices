@@ -7,12 +7,10 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 IWebHostEnvironment environment = builder.Environment;
 // Add services to the container.
-// System.Console.WriteLine("--> Using InMem DB");
-// builder.Services.AddDbContext<AppDbContext>(opt => 
-//     opt.UseInMemoryDatabase("InMem"));
-System.Console.WriteLine("--> Using SqlServer DB");
-builder.Services.AddDbContext<AppDbContext>(opt =>
-opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+
+// System.Console.WriteLine("--> Using SqlServer DB");
+// builder.Services.AddDbContext<AppDbContext>(opt =>
+// opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();
@@ -29,19 +27,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    System.Console.WriteLine("--> Using InMem DB");
+builder.Services.AddDbContext<AppDbContext>(opt => 
+    opt.UseInMemoryDatabase("InMem"));
     app.UseSwagger();
-    app.UseSwaggerUI();
-    
+    app.UseSwaggerUI();    
 }
 
-if(environment.IsProduction())
-{
-
-}
-else
-{
-
-}
 
 app.UseHttpsRedirection();
 

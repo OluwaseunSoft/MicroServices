@@ -11,7 +11,7 @@ IWebHostEnvironment environment = builder.Environment;
 // System.Console.WriteLine("--> Using SqlServer DB");
 // builder.Services.AddDbContext<AppDbContext>(opt =>
 // opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
-builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
+builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();
 // Auto Mapper Configurations

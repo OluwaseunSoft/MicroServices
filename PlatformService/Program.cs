@@ -8,9 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 IWebHostEnvironment environment = builder.Environment;
 // Add services to the container.
 
-// System.Console.WriteLine("--> Using SqlServer DB");
-// builder.Services.AddDbContext<AppDbContext>(opt =>
-// opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+System.Console.WriteLine("--> Using SqlServer DB");
+builder.Services.AddDbContext<AppDbContext>(opt =>
+opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();

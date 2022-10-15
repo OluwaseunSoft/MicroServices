@@ -7,10 +7,11 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 IWebHostEnvironment environment = builder.Environment;
 // Add services to the container.
- System.Console.WriteLine("--> Using InMem DB");
-builder.Services.AddDbContext<AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("InMem"));
-
+//  System.Console.WriteLine("--> Using InMem DB");
+// builder.Services.AddDbContext<AppDbContext>(opt => 
+//     opt.UseInMemoryDatabase("InMem"));
+builder.Services.AddDbContext<AppDbContext>(opt =>
+opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();
@@ -32,11 +33,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();    
 }
 else if (app.Environment.IsProduction())
-{
-     System.Console.WriteLine("--> Production Env");
-     System.Console.WriteLine("--> Using SqlServer DB");
-builder.Services.AddDbContext<AppDbContext>(opt =>
-opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+{   
+//      System.Console.WriteLine("--> Using SqlServer DB Production Env");
+// builder.Services.AddDbContext<AppDbContext>(opt =>
+// opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 }
 
 
@@ -46,6 +46,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrepDb.PrepPopulation(app, app.Environment.IsProduction());
+//PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 
 app.Run();

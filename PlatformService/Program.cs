@@ -7,9 +7,7 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 IWebHostEnvironment environment = builder.Environment;
 // Add services to the container.
- System.Console.WriteLine("--> Using InMem DB");
-builder.Services.AddDbContext<AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("InMem"));
+
 
 builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
@@ -22,21 +20,26 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 System.Console.WriteLine($"--> CommandService Endpoint {builder.Configuration["CommandService"]}");
 
+if(builder.Environment.IsDevelopment())
+{
+System.Console.WriteLine("--> Using InMem DB");
+builder.Services.AddDbContext<AppDbContext>(opt => 
+    opt.UseInMemoryDatabase("InMem"));  
+}
+else if(builder.Environment.IsProduction())
+{
+ System.Console.WriteLine("--> Using SqlServer DB");
+builder.Services.AddDbContext<AppDbContext>(opt =>
+opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+}
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {       
     app.UseSwagger();
-    app.UseSwaggerUI();    
+    app.UseSwaggerUI();     
 }
-else if (app.Environment.IsProduction())
-{   
-     System.Console.WriteLine("--> Using SqlServer DB Production Env");
-builder.Services.AddDbContext<AppDbContext>(opt =>
-opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
-}
-
 
 app.UseHttpsRedirection();
 

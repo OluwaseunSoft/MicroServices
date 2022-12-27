@@ -12,7 +12,7 @@ namespace CommandsService.Data
         }
         public void CreateCommand(int platformId, Command command)
         {
-            if(command == null)
+            if (command == null)
             {
                 throw new ArgumentNullException(nameof(command));
             }
@@ -23,11 +23,16 @@ namespace CommandsService.Data
 
         public void CreatePlatform(Platform plat)
         {
-            if(plat == null)
+            if (plat == null)
             {
                 throw new ArgumentNullException(nameof(plat));
             }
             _context.Platforms.Add(plat);
+        }
+
+        public bool ExternalPlatformExists(int externalPlatformId)
+        {
+            return _context.Platforms.Any(p => p.ExternalID == externalPlatformId);
         }
 
         public IEnumerable<Platform> GetAllPlatforms()
@@ -37,24 +42,24 @@ namespace CommandsService.Data
 
         public Command GetCommand(int platformId, int commandId)
         {
-            return _context.Commands.Where(c=>c.PlatformId == platformId
+            return _context.Commands.Where(c => c.PlatformId == platformId
             && c.Id == commandId).FirstOrDefault();
         }
 
         public IEnumerable<Command> GetCommandsForPlatform(int platformId)
         {
-            return _context.Commands.Where(c=>c.PlatformId == platformId)
-            .OrderBy(c=>c.Platform.Name);
+            return _context.Commands.Where(c => c.PlatformId == platformId)
+            .OrderBy(c => c.Platform.Name);
         }
 
         public bool PlatformExists(int platformId)
         {
-            return _context.Platforms.Any(p=>p.Id == platformId);
+            return _context.Platforms.Any(p => p.Id == platformId);
         }
 
         public bool SaveChanges()
         {
-          return (_context.SaveChanges() >= 0);
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PlatformService.AsyncDataServices;
 using PlatformService.Data;
 using PlatformService.Profiles;
 using PlatformService.SyncDataServices.Http;
@@ -10,6 +11,7 @@ IWebHostEnvironment environment = builder.Environment;
 
 
 builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
+builder.Services.AddTransient<IMessageBusClient, MessageBusClient>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddControllers();
 // Auto Mapper Configurations
@@ -20,25 +22,25 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 System.Console.WriteLine($"--> CommandService Endpoint {builder.Configuration["CommandService"]}");
 
-if(builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
-System.Console.WriteLine("--> Using InMem DB");
-builder.Services.AddDbContext<AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("InMem"));  
+    System.Console.WriteLine("--> Using InMem DB");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+        opt.UseInMemoryDatabase("InMem"));
 }
-else if(builder.Environment.IsProduction())
+else if (builder.Environment.IsProduction())
 {
- System.Console.WriteLine("--> Using SqlServer DB");
-builder.Services.AddDbContext<AppDbContext>(opt =>
-opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+    System.Console.WriteLine("--> Using SqlServer DB");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 }
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{       
+{
     app.UseSwagger();
-    app.UseSwaggerUI();     
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

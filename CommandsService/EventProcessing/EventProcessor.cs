@@ -24,7 +24,7 @@ namespace CommandsService.EventProcessing
             switch (eventType)
             {
                 case EventType.PlatformPublished:
-                    //To Do
+                    AddPlatform(message);
                     break;
 
                 default:
@@ -62,6 +62,7 @@ namespace CommandsService.EventProcessing
                     {
                         repo.CreatePlatform(plat);
                         repo.SaveChanges();
+                        System.Console.WriteLine("--> Platform added...");
                     }
                     else
                     {

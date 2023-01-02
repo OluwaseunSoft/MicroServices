@@ -128,3 +128,10 @@ C:\Users\06604\source\repos\MicroServices\platformservice\obj\Debug\net6.0\Platf
 C:\Users\06604\source\repos\MicroServices\platformservice\obj\Debug\net6.0\ref\PlatformService.dll
 C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\appsettings.Production.json
 C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.Net.Client.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+C:\Users\akinw\source\repos\MicroServices\PlatformService\bin\Debug\net6.0\Grpc.Net.Common.dll

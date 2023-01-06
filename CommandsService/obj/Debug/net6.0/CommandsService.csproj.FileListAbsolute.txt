@@ -36,3 +36,7 @@ C:\Users\akinw\source\repos\MicroServices\CommandsService\obj\Debug\net6.0\Comma
 C:\Users\akinw\source\repos\MicroServices\CommandsService\obj\Debug\net6.0\ref\CommandsService.dll
 C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\appsettings.Production.Json
 C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\Grpc.Net.Client.dll
+C:\Users\akinw\source\repos\MicroServices\CommandsService\bin\Debug\net6.0\Grpc.Net.Common.dll
